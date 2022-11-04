@@ -1,0 +1,8 @@
+header {
+  height: 70px;
+  width: 100%;
+  background-color: rgb(18, 22, 19);
+  color: aliceblue;
+  padding: 20px;
+  align-items: center;
+}
