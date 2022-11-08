@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Roboto:ital,wght@0,100;1,700;1,900&family=Signika+Negative:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --background-color: #1f2124;
+  --second-background-color: #383a3f;
+  --lighter-text-color: #dde1ed;
+  --button-color: rgb(209, 138, 7);
+  --hover-color: rgb(133, 112, 74);
+  --font: "Noto Sans", sans-serif;
+  --hand-font: "Dancing Script", cursive;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+body {
+  font-family: var(--font);
+  background-color: var(--background-color);
+  color: white;
+}
+.App {
+  display: grid;
+  grid-template-columns: 5fr 5fr;
+  margin-top: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+}
+
+/* Form component */
+
+form {
+  display: block;
+  width: 90%;
+  margin: 55px 0 0 20px;
+  background-color: var(--second-background-color);
+  padding: 50px;
+  height: 480px;
+  box-shadow: 3px 3px rgb(48, 47, 47);
+  border-radius: 5px;
+}
+.formContent {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  width: 450px;
+  justify-content: space-between;
+  align-items: center;
+}
+.submitButton {
+  margin: 20px 0 0 335px;
+}
+input[type="submit"] {
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input,
+select {
+  font-family: inherit;
+  margin: 0.5rem 0;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  padding: 12px 20px;
+}
+textarea {
+  max-width: 225px;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin: 2rem 0 0;
+}
+
+button {
+  color: var(--lighter-text-color);
+  background: var(--hover-color);
+  border: none;
+  border-radius: 3px;
+  padding: 1rem 2rem;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+button:hover {
+  color: var(--background-color);
+  background: var(--button-color);
+  border: none;
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+
+/* View component */
+.view {
+  background-image: url(./image/123.jpeg);
+  scale: 0.8;
+  display: block;
+  height: 600px;
+  padding: 60px 0 0 40px;
+  color: black;
+}
+
+.viewContent {
+  margin-top: 60px;
+}
+
+.inputView {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  width: 650px;
+  justify-content: space-between;
+}
+
+.text {
+  color: var(--button-color);
+  display: block;
+  width: 400px;
+  word-wrap: break-word;
+  word-break: break-all;
+  margin: 5px;
+  font-family: var(--hand-font);
+  font-size: 35px;
+  line-height: 2.7rem;
+}
+
+/* Popup component */
+.modalHeader {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+.modal {
+  justify-self: center;
+  position: absolute;
+  background-color: rgb(45, 55, 52);
+  width: 700px;
+  padding: 30px;
+  border-radius: 7px;
+}
+
+.modal > .header {
+  width: 100%;
+  border-bottom: 1px solid gray;
+  text-align: center;
+  padding: 20px;
+}
+.modalButtons {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  column-gap: 100px;
+}
+.modalContent {
+  margin-bottom: 20px;
+}

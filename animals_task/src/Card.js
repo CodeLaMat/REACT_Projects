@@ -1,5 +1,5 @@
 import React from "react";
-import "./Card.css";
+import "./index.css";
 
 const Card = (props) => {
   return (
@@ -13,10 +13,15 @@ const Card = (props) => {
       </button>
       <h2 className="title">{props.name}</h2>
       <div className="likesContainer">
-        <p> &hearts; {props.like}</p>
+        <button className="removeLike" onClick={props.removeLike}>
+          -
+        </button>
+        <p>
+          <span className="heart">&hearts;</span> {props.like}
+        </p>
 
         <button className="addLike" onClick={props.addLikes}>
-          Add like
+          +
         </button>
       </div>
     </div>
