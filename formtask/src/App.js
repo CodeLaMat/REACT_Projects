@@ -6,25 +6,38 @@ import Popup from "./Popup";
 
 class App extends Component {
   state = {
-    firstName: "",
-    lastName: "",
-    phoneNumber: "",
-    role: "",
-    message: "",
+    note: {
+      firstName: "",
+      lastName: "",
+      phoneNumber: "",
+      role: "",
+      message: "",
+    },
+
     showPopup: false,
   };
 
   eventHandler = (event) => {
-    this.setState({ [event.target.name]: event.target.value });
+    this.setState({
+      note: { ...this.state.note, [event.target.name]: event.target.value },
+    });
   };
 
   submitHandler = (e) => {
     e.preventDefault();
-    this.setState({ showPopup: true });
+    this.setState({ showPopup: !this.state.showPopup });
   };
 
-  popupHandler = (e) => {
-    this.setState({ showPopup: false });
+  closeHandler = (e) => {
+    // window.location.reload();
+    this.setState({
+      firstName: "",
+      lastName: "",
+      phoneNumber: "",
+      role: "",
+      message: "",
+      showPopup: false,
+    });
   };
 
   render() {
@@ -34,22 +47,20 @@ class App extends Component {
           <h1>Form Task</h1>
         </div>
         <div className="App">
-          <Form change={this.eventHandler} submitHandler={this.submitHandler} />
-          <View
-            firstName={this.state.firstName}
-            lastName={this.state.lastName}
-            phoneNumber={this.state.phoneNumber}
-            role={this.state.role}
-            message={this.state.message}
+          <Form
+            change={this.eventHandler}
+            submitHandler={this.submitHandler}
+            {...this.state.note}
           />
+          <View {...this.state.note} />
           {this.state.showPopup && (
             <Popup
-              firstName={this.state.firstName}
-              lastName={this.state.lastName}
-              phoneNumber={this.state.phoneNumber}
-              role={this.state.role}
-              message={this.state.message}
-              popupClose={this.popupHandler}
+              firstName={this.state.note.firstName}
+              lastName={this.state.note.lastName}
+              phoneNumber={this.state.note.phoneNumber}
+              role={this.state.note.role}
+              message={this.state.note.message}
+              popupClose={this.closeHandler}
             />
           )}
         </div>

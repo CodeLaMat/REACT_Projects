@@ -5,55 +5,68 @@ const Form = (props) => {
   return (
     <form onSubmit={props.submitHandler}>
       <div className="formContent">
-        <label>First name</label>
+        <label htmlFor="firstName">First name</label>
         <input
           name="firstName"
           type="text"
           className="firstName"
+          id="firstName"
+          value={props.firstName}
           placeholder="Your name"
           required
           onChange={props.change}
         ></input>
       </div>
       <div className="formContent">
-        <label>Last name</label>
+        <label htmlFor="lastName">Last name</label>
         <input
           name="lastName"
           type="text"
           className="lastName"
+          id="lastName"
           placeholder="Your last name"
           required
+          value={props.lastName}
           onChange={props.change}
         ></input>
       </div>
       <div className="formContent">
-        <label>Phone number</label>
+        <label htmlFor="phoneNumber">Phone number</label>
         <input
           name="phoneNumber"
-          type="phone"
+          type="tel"
           className="phoneNumber"
+          id="phoneNumber"
           placeholder="Your phone number"
+          value={props.phoneNumber}
           required
           onChange={props.change}
         ></input>
       </div>
       <div className="formContent">
-        <label>Role</label>
-        <select name="role" className="role" required onChange={props.change}>
-          <option disabled selected="selected">
+        <label id="role">Role</label>
+        <select
+          name="role"
+          className="role"
+          id="role"
+          required
+          defaultValue="choice"
+          onChange={props.change}
+        >
+          <option value="choice" disabled>
             Please select one
           </option>
-          <option>Teacher</option>
-          <option>Student</option>
-          <option>Else</option>
+          <option value="teacher">Teacher</option>
+          <option value="student">Student</option>
+          <option value="other">Other</option>
         </select>
       </div>
       <div className="formContent">
-        <label>Message</label>
+        <label id="message">Message</label>
         <textarea
           name="message"
-          type="text"
           className="message"
+          id="message"
           placeholder="Write something..."
           onChange={props.change}
         ></textarea>
