@@ -1,0 +1,110 @@
+:root {
+  --color-one: #1f2124;
+  --color-two: #383a3f;
+  --color-three: #f68657;
+  --color-five: white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  background-color: var(--color-two);
+  color: var(--color-five);
+}
+
+.animalsList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: space-between;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 5px;
+  max-width: 1500px;
+}
+
+.heading {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin: 30px;
+}
+
+h1 {
+  letter-spacing: 3px;
+  font-size: 3rem;
+}
+.main {
+  display: flex;
+}
+
+.title {
+  text-align: center;
+  letter-spacing: 5px;
+}
+
+.cardBox {
+  background-color: var(--color-one);
+  border-radius: 10px;
+  box-shadow: 0 9px 15px rgba(100, 100, 100, 0.5);
+  margin: 5px;
+  padding: 0px;
+  text-align: center;
+  max-width: 300px;
+}
+
+.likesContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.addLike,
+.removeLike {
+  background-color: var(--color-two);
+  border: none;
+  height: 30px;
+  width: 40px;
+  color: var(--color-three);
+  border-radius: 5px;
+  margin: 0px 15px;
+  font-size: 1.5rem;
+}
+
+.addLike:hover,
+.removeLike:hover {
+  background-color: var(--color-three);
+  color: var(--color-five);
+}
+
+.remove {
+  position: relative;
+  top: -200px;
+  left: 130px;
+  color: var(--color-three);
+  background: var(--color-two);
+  border: 0;
+  border-radius: 3px;
+}
+
+.remove:hover {
+  background-color: var(--color-three);
+  color: var(--color-five);
+}
+
+.numbers,
+.heart {
+  color: var(--color-three);
+}

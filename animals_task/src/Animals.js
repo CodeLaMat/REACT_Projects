@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "./index.css";
-import { animals } from "./Animal";
+import "./Animals.css";
+import { animals } from "./AnimalList";
 
 import Card from "./Card";
 
