@@ -19,11 +19,11 @@ Live page here
 
 ## Screenshot
 
-### Sources
+![ScreenShot](./src/img/Screenshot.jpg)
 
 ### Authors and acknowledgment
 
 Eyvaz Alishov
 
 - GitHub @CodeLaMat
-- LinkedIn
+- [LinkedIn](https://www.linkedin.com/in/eyvaz-alishov-54361054/)
