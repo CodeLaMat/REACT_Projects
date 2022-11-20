@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./Birds.css";
+import "./index.css";
 import { birds } from "./AnimalList";
 
 import Card from "./Card";
@@ -69,7 +69,7 @@ class Birds extends Component {
 
     return (
       <div className="heading">
-        <h1>birds</h1>
+        <h1>Birds</h1>
         <h3>
           <span>We could find</span>{" "}
           <span className="numbers">{this.state.birds.length}</span>{" "}

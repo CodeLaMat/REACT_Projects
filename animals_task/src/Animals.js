@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import "./Animals.css";
+import "./index.css";
 import { animals } from "./AnimalList";
 
 import Card from "./Card";
 
-class App extends Component {
+class Animals extends Component {
   state = {
     animals: animals,
     likes: 0,
@@ -84,4 +84,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Animals;

@@ -2,6 +2,7 @@
   --color-one: #1f2124;
   --color-two: #383a3f;
   --color-three: #f68657;
+  --color-four: #8f8f8f;
   --color-five: white;
 }
 
@@ -24,7 +25,44 @@ body {
   color: var(--color-five);
 }
 
-.animalsList {
+.menuContainer {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+nav {
+  margin: 25px;
+  background: inherit;
+  padding: 16px;
+  gap: 20px;
+}
+ul {
+  list-style: none;
+  display: flex;
+}
+li {
+  margin: 50px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-four);
+  font-size: 24px;
+  font-weight: 400;
+  position: relative;
+  text-transform: uppercase;
+  margin: 20px;
+}
+
+/* CARD BOXES */
+
+.animalsList,
+.birdsList {
   display: flex;
   flex-wrap: wrap;
   align-items: space-between;
@@ -107,4 +145,38 @@ h1 {
 .numbers,
 .heart {
   color: var(--color-three);
+}
+
+/* Homepage */
+
+.homeContainer {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  gap: 10px;
+  width: 40%;
+}
+
+.birdContainer,
+.animalContainer {
+  position: relative;
+  text-align: center;
+  color: var(--color-four);
+}
+
+.birdName {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+  letter-spacing: 5px;
+  margin-left: 50px;
+}
+.homeImg {
+  width: 500px;
+}
+
+.aboutContainer {
+  display: block;
+  margin-top: 100px;
+  color: var(--color-five);
 }
