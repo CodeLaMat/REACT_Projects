@@ -1,9 +1,17 @@
 import React from "react";
 import "./App.css";
 
-const Form = (props) => {
+const Form = ({
+  submitHandler,
+  firstName,
+  lastName,
+  phoneNumber,
+  role,
+  message,
+  change,
+}) => {
   return (
-    <form onSubmit={props.submitHandler}>
+    <form onSubmit={submitHandler}>
       <div className="formContent">
         <label htmlFor="firstName">First name</label>
         <input
@@ -11,10 +19,10 @@ const Form = (props) => {
           type="text"
           className="firstName"
           id="firstName"
-          value={props.firstName}
+          value={firstName}
           placeholder="Your name"
           required
-          onChange={props.change}
+          onChange={change}
         ></input>
       </div>
       <div className="formContent">
@@ -26,8 +34,8 @@ const Form = (props) => {
           id="lastName"
           placeholder="Your last name"
           required
-          value={props.lastName}
-          onChange={props.change}
+          value={lastName}
+          onChange={change}
         ></input>
       </div>
       <div className="formContent">
@@ -38,9 +46,9 @@ const Form = (props) => {
           className="phoneNumber"
           id="phoneNumber"
           placeholder="Your phone number"
-          value={props.phoneNumber}
+          value={phoneNumber}
           required
-          onChange={props.change}
+          onChange={change}
         ></input>
       </div>
       <div className="formContent">
@@ -51,7 +59,7 @@ const Form = (props) => {
           id="role"
           required
           defaultValue="choice"
-          onChange={props.change}
+          onChange={change}
         >
           <option value="choice" disabled>
             Please select one
@@ -68,7 +76,7 @@ const Form = (props) => {
           className="message"
           id="message"
           placeholder="Write something..."
-          onChange={props.change}
+          onChange={change}
         ></textarea>
       </div>
       <div>

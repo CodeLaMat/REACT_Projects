@@ -1,6 +1,14 @@
 import React from "react";
 
-const Popup = (props) => {
+const Popup = ({
+  firstName,
+  lastName,
+  phoneNumber,
+  role,
+  message,
+  popupClose,
+  postHandler,
+}) => {
   return (
     <div className="modal">
       <div>
@@ -9,30 +17,30 @@ const Popup = (props) => {
       <div className="viewContent modalContent">
         <div className="inputView">
           <h3>First name:</h3>
-          <span className="text">{props.firstName}</span>
+          <span className="text">{firstName}</span>
         </div>
         <div className="inputView">
           <h3>Last name:</h3>
-          <span className="text">{props.lastName}</span>
+          <span className="text">{lastName}</span>
         </div>
         <div className="inputView">
           <h3>Phone number:</h3>
-          <span className="text">{props.phoneNumber}</span>
+          <span className="text">{phoneNumber}</span>
         </div>
         <div className="inputView">
           <h3>Role:</h3>
-          <span className="text">{props.role}</span>
+          <span className="text">{role}</span>
         </div>
         <div className="inputView">
           <h3>Your message:</h3>
-          <span className="text">{props.message}</span>
+          <span className="text">{message}</span>
         </div>
       </div>
       <div className="modalButtons">
-        <button className="accept button>" onClick={props.popupClose}>
+        <button onClick={postHandler} className="accept button>">
           You accept
         </button>
-        <button className="reject button" onClick={props.popupClose}>
+        <button className="reject button" onClick={popupClose}>
           Reject
         </button>
       </div>

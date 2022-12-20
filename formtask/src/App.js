@@ -1,71 +1,67 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import "./App.css";
 import Form from "./Form";
 import View from "./View";
+import NoteList from "./NoteList";
 import Popup from "./Popup";
 
-class App extends Component {
-  state = {
-    note: {
-      firstName: "",
-      lastName: "",
-      phoneNumber: "",
-      role: "",
-      message: "",
-    },
+export default function App() {
+  const [showPopup, setShowPopup] = useState(false);
+  const [notes, setNotes] = useState({
+    firstName: "",
+    lastName: "",
+    phoneNumber: "",
+    role: "",
+    message: "",
+  });
 
-    showPopup: false,
+  const eventHandler = (e) => {
+    setNotes({ ...notes, [e.target.name]: e.target.value });
   };
 
-  eventHandler = (event) => {
-    this.setState({
-      note: { ...this.state.note, [event.target.name]: event.target.value },
-    });
-  };
-
-  submitHandler = (e) => {
+  const submitHandler = (e) => {
     e.preventDefault();
-    this.setState({ showPopup: !this.state.showPopup });
+    setShowPopup(true);
   };
 
-  closeHandler = (e) => {
-    // window.location.reload();
-    this.setState({
+  const postHandler = (e) => {
+    axios
+      .post("http://localhost:3001/notes", notes)
+      .then((res) => console.log(res))
+      .then(window.location.reload())
+      .catch((error) => console.log(error));
+  };
+
+  const closeHandler = (e) => {
+    setNotes({
+      ...notes,
       firstName: "",
       lastName: "",
       phoneNumber: "",
       role: "",
       message: "",
-      showPopup: false,
     });
   };
 
-  render() {
-    return (
-      <div>
-        <div className="header">
-          <h1>Form Task</h1>
-        </div>
-        <div className="App">
-          <Form
-            change={this.eventHandler}
-            submitHandler={this.submitHandler}
-            {...this.state.note}
-          />
-          <View {...this.state.note} />
-          {this.state.showPopup && (
-            <Popup
-              firstName={this.state.note.firstName}
-              lastName={this.state.note.lastName}
-              phoneNumber={this.state.note.phoneNumber}
-              role={this.state.note.role}
-              message={this.state.note.message}
-              popupClose={this.closeHandler}
-            />
-          )}
-        </div>
+  return (
+    <div>
+      <div className="header">
+        <h1>Form Task</h1>
       </div>
-    );
-  }
+      <div className="App">
+        <Form change={eventHandler} submitHandler={submitHandler} {...notes} />
+        <View {...notes} />
+
+        <NoteList {...notes} />
+        {showPopup && (
+          <Popup
+            {...notes}
+            popupClose={closeHandler}
+            postHandler={postHandler}
+          />
+        )}
+      </div>
+    </div>
+  );
 }
-export default App;
