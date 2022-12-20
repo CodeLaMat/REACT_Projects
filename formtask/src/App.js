@@ -8,7 +8,7 @@ import Popup from "./Popup";
 
 export default function App() {
   const [showPopup, setShowPopup] = useState(false);
-  const [notes, setNotes] = useState({
+  const [note, setNote] = useState({
     firstName: "",
     lastName: "",
     phoneNumber: "",
@@ -17,7 +17,7 @@ export default function App() {
   });
 
   const eventHandler = (e) => {
-    setNotes({ ...notes, [e.target.name]: e.target.value });
+    setNote({ ...note, [e.target.name]: e.target.value });
   };
 
   const submitHandler = (e) => {
@@ -27,15 +27,15 @@ export default function App() {
 
   const postHandler = (e) => {
     axios
-      .post("http://localhost:3001/notes", notes)
+      .post("http://localhost:3000/notes", note)
       .then((res) => console.log(res))
       .then(window.location.reload())
       .catch((error) => console.log(error));
   };
 
   const closeHandler = (e) => {
-    setNotes({
-      ...notes,
+    setNote({
+      ...note,
       firstName: "",
       lastName: "",
       phoneNumber: "",
@@ -50,13 +50,13 @@ export default function App() {
         <h1>Form Task</h1>
       </div>
       <div className="App">
-        <Form change={eventHandler} submitHandler={submitHandler} {...notes} />
-        <View {...notes} />
+        <Form change={eventHandler} submitHandler={submitHandler} {...note} />
+        <View {...note} />
 
-        <NoteList {...notes} />
+        <NoteList {...note} />
         {showPopup && (
           <Popup
-            {...notes}
+            {...note}
             popupClose={closeHandler}
             postHandler={postHandler}
           />

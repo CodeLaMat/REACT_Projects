@@ -1,0 +1,36 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "firstname": "Lisa",
+      "lastname": "River",
+      "phone": "234567890",
+      "role": "student",
+      "message": "Some important message here.."
+    },
+    {
+      "id": 2,
+      "firstname": "Emeri",
+      "lastname": "Vuorinen",
+      "phone": "9876543",
+      "role": "teacher",
+      "message": "Please call me..."
+    },
+    {
+      "id": 3,
+      "firstname": "Aysu",
+      "lastname": "Karadag",
+      "phone": "123487654",
+      "role": "researcher",
+      "message": "Need more information"
+    },
+    {
+      "id": 4,
+      "firstname": "Donald",
+      "lastname": "Trupm",
+      "phone": "9874567",
+      "role": "researcher",
+      "message": "Nothing to declare..."
+    }
+  ]
+}
