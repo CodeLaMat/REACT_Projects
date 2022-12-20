@@ -5,7 +5,7 @@ export default function NoteList() {
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/notes").then((res) => setNotes(res.data));
+    axios.get("http://localhost:3001/notes").then((res) => setNotes(res.data));
   }, []);
 
   return (

@@ -1,7 +1,6 @@
 import React from "react";
 
-const View = ({ firstName, lastName, phoneNumber, role, message }) => {
-  console.log(firstName);
+const View = ({ firstname, lastname, phone, role, message }) => {
   return (
     <div className="view">
       <div>
@@ -10,15 +9,15 @@ const View = ({ firstName, lastName, phoneNumber, role, message }) => {
       <div className="viewContent">
         <div className="inputView">
           <h3>First name:</h3>
-          <span className="text">{firstName}</span>
+          <span className="text">{firstname}</span>
         </div>
         <div className="inputView">
           <h3>Last name:</h3>
-          <span className="text">{lastName}</span>
+          <span className="text">{lastname}</span>
         </div>
         <div className="inputView">
           <h3>Phone number:</h3>
-          <span className="text">{phoneNumber}</span>
+          <span className="text">{phone}</span>
         </div>
         <div className="inputView">
           <h3>Role:</h3>

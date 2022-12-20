@@ -3,9 +3,9 @@ import "./App.css";
 
 const Form = ({
   submitHandler,
-  firstName,
-  lastName,
-  phoneNumber,
+  firstname,
+  lastname,
+  phone,
   role,
   message,
   change,
@@ -13,40 +13,40 @@ const Form = ({
   return (
     <form onSubmit={submitHandler}>
       <div className="formContent">
-        <label htmlFor="firstName">First name</label>
+        <label htmlFor="firstname">First name</label>
         <input
-          name="firstName"
+          name="firstname"
           type="text"
-          className="firstName"
-          id="firstName"
-          value={firstName}
+          className="firstname"
+          id="firstname"
+          value={firstname}
           placeholder="Your name"
           required
           onChange={change}
         ></input>
       </div>
       <div className="formContent">
-        <label htmlFor="lastName">Last name</label>
+        <label htmlFor="lastname">Last name</label>
         <input
-          name="lastName"
+          name="lastname"
           type="text"
-          className="lastName"
-          id="lastName"
+          className="lastname"
+          id="lastname"
           placeholder="Your last name"
           required
-          value={lastName}
+          value={lastname}
           onChange={change}
         ></input>
       </div>
       <div className="formContent">
-        <label htmlFor="phoneNumber">Phone number</label>
+        <label htmlFor="phone">Phone number</label>
         <input
-          name="phoneNumber"
+          name="phone"
           type="tel"
-          className="phoneNumber"
-          id="phoneNumber"
+          className="phone"
+          id="phone"
           placeholder="Your phone number"
-          value={phoneNumber}
+          value={phone}
           required
           onChange={change}
         ></input>

@@ -9,9 +9,9 @@ import Popup from "./Popup";
 export default function App() {
   const [showPopup, setShowPopup] = useState(false);
   const [note, setNote] = useState({
-    firstName: "",
-    lastName: "",
-    phoneNumber: "",
+    firstname: "",
+    lastname: "",
+    phone: "",
     role: "",
     message: "",
   });
@@ -27,7 +27,7 @@ export default function App() {
 
   const postHandler = (e) => {
     axios
-      .post("http://localhost:3000/notes", note)
+      .post("http://localhost:3001/notes", note)
       .then((res) => console.log(res))
       .then(window.location.reload())
       .catch((error) => console.log(error));
@@ -36,9 +36,9 @@ export default function App() {
   const closeHandler = (e) => {
     setNote({
       ...note,
-      firstName: "",
-      lastName: "",
-      phoneNumber: "",
+      firstname: "",
+      lastname: "",
+      phone: "",
       role: "",
       message: "",
     });
