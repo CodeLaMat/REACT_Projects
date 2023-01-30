@@ -2,5 +2,8 @@
   "dependencies": {
     "bootstrap": "^5.2.3",
     "react-bootstrap": "^2.7.0"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^13.4.0"
   }
 }
